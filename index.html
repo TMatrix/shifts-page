@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ShiftPicker</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="header">
+    <div id="header" class="header-container">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="Logo">
+      </div>
+      <span class="user-logo">
+        <span class="icon-account click-class"></span>
+      </span>
+      <span class="welcome-message"> 
+        <span class="user-name click-class">Hi, John</span>
+      </span>
+      <span class="logout-btn header-btn click-class"><i class="fas fa-sign-out-alt"></i></span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="main">
+      <div class="shiftPick">
+        <div class="date">
+          <p>
+            <label for="datepicker"><i class="far fa-calendar-alt"></i></label>
+            <input type="text" id="datepicker">
+          </p>
+        </div>
+        <div class="timeStart">
+          <p>
+            <label for="startTime"><i class="fas fa-hourglass-start"></i></label>
+            <input type="text" class="timepicker" id="startTime">
+          </p>
+        </div>
+        <div class="timeEnd">
+          <p>
+            <label for="endTime"><i class="fas fa-hourglass-end"></i></label>
+            <input type="text" class="timepicker" id="endTime">
+          <p>
+        </div>
+        <div class="addShift popup" id="add">
+          <span class="popuptext" id="myPopup">Please, select correct work hours.</span>
+          <p>New Shift</p>
+        </div>
+      </div>
+      <div class="shiftList">
+        <p>Accepted shifts</p>
+        <ul>
+          <!-- <li>
+            <div class="button">
+              <button class="remove"><i class="far fa-trash-alt"></i></button>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="aside">
+      <div class="info-card">
+        <div class="photo">
+          <img src="img/user-photo.jpg" alt="Photo">
+        </div>
+        <div class="user-info">
+          <div class="name">John Dorian</div>
+          <div class="position">
+            <i class="fas fa-briefcase"></i>
+            <span>Doctor of medicine<br> at Sacred Heart Hospital</span></div>
+          <div class="phone"><i class="fas fa-phone"></i>+1-202-555-0104</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="info">
+      <div class="address">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Sacred Heart Hospital 
+        <br> 5151 N. Ninth Avenue
+        <br> Pensacola, FL 32504</span> 
+      </div>
+      <div class="phone">
+        <i class="fas fa-phone-square"></i>+1-850-416-7000
+      </div>
+    </div>
+    <div class="copyright">Copyright © 2018</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

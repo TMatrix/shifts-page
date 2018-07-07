@@ -1,0 +1,698 @@
+:root{
+  --headerColor: #a7d2cb;
+  --mainColor: #a7d2cb;
+  --asideColor: #f2d388;
+  --footerColor: #874c62;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background-color: #dfdce3; */
+}
+
+/* Header */
+.header-container {
+  background-color: var(--headerColor);
+  height: 80px;
+  font-family: Open Sans;
+  font-size: 18px;
+  text-align: right;
+  box-shadow: 0 2px 3px #dedede;
+}
+
+.logo img{
+  float: left;
+  height: 80px;
+}
+
+.header-container .user-logo {
+  width: 32px;
+  margin: 14px 12px;
+  height: 32px;
+}
+
+.header-container .welcome-message {
+  color: #ffffff;
+  line-height: 80px;
+  font-weight: 400;
+}
+
+.header-container .welcome-message .user-name {
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom:1px solid rgb(255, 197, 5, 0.5);
+}
+
+.header-container .welcome-message .user-name:hover {
+  border-bottom:1px solid #ffc505;
+  box-shadow: 0 2px 3px #dedede;
+}
+
+.click-class {
+  cursor: pointer;
+}
+
+.default-cursor {
+  cursor: default;
+}
+
+.header-container .header-btn {
+  /* float: right; */
+  line-height: 60px;
+  color: #dcae1d;
+  font-weight: 400;
+  margin: 0 12px;
+}
+
+.header-container .header-btn:hover {
+  color: #ffc505;
+  box-shadow: 0 2px 3px #dedede;
+}
+
+.content{
+  padding: 10px 0;
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  grid-template-areas: "main aside ";
+}
+ .main{
+  box-shadow: 0 2px 3px #dedede;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "shiftPick shiftList ";
+  grid-area: main;
+  margin: 0 10px 10px 0;
+  background-color: var(--mainColor);
+ }
+.shiftPick{
+  display: grid;
+  /* border: 1px solid red; */
+  justify-items: center;
+  align-self: start; 
+  grid-area: shiftPick;
+  color: #00303f;
+}
+
+.shiftPick div {
+  margin: 15px;
+}
+
+.shiftPick p i{
+  margin-right: 10px;
+  position: relative;
+  top: 3px;
+  left: -3px;
+  font-size: 1.4em;
+}
+
+input[type="text"] {
+  padding: 10px 0 10px 15px;
+  font-family: "Open Sans", sans;
+  font-weight: 400;
+  color: #377D6A;
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-align: center;
+}
+
+.addShift {
+  background-color: #00303f;
+  box-shadow: 1px 3px 4.7px 0.3px rgba(0, 0, 0, 0.24);
+  height: 35px;
+  line-height: 25px;
+  font-family: "Nunito", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  width: 25%;
+  /* padding: 10px 0 10px 15px; */
+}
+
+.addShift:hover {
+  background-color: rgb(131, 198, 221);
+}
+
+.addShift p{
+  margin-top: 5px;
+}
+
+.shiftList {
+  max-width: 100%;
+  float: left;
+  padding: 15px;
+  margin: 15px;
+  /* border: 1px solid #dedede; */
+  /* border: 1px solid blue; */
+  grid-area: shiftList;
+}
+
+.shiftList p{
+  opacity: 0.6;
+  color: #00303f;
+  letter-spacing: 1px;
+  text-indent: 10px;
+  margin-bottom: 3px;
+  font-family: "Nunito", sans-serif;
+}
+
+ul {
+  width: 100%;
+  height: auto;
+  float: left;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid rgba(0, 48, 63, 0.2);
+  font-family: "Nunito", sans-serif;
+}
+
+ul li {
+  width: 100%;
+  min-height: 50px;
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  line-height: 22px;
+  background: rgba(0, 48, 63, 0.2);
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+  margin: 0 0 10px 0;
+  padding: 14px 100px 14px 14px;
+  word-break: break-word;
+}
+
+ul li:last-of-type {
+  margin: 0;
+}
+
+ul li .button {
+  width: 70px;
+  height: 50px;
+
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+ul li .button button {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background: none;
+  /* position: relative; */
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+ul li .button button:before {
+  content: '';
+  width: 1px;
+  height: 30px;
+  background: #edf0f1;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+ul li .button button i {
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -10px 0 0 -10px;
+}
+
+ul li .button button i {
+  color:#c0cecb;
+}
+
+ul li .button button i:hover {
+  color:#e85656;
+}
+
+.aside{
+  color: #874c62;
+  clear: both;
+  grid-area: aside;
+  margin-bottom: 10px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex: 1 30%;
+  min-width: 250px;
+  box-shadow: 0 2px 3px #dedede;
+  background-color: var(--asideColor);
+}
+
+.photo{
+  /* flex: 1; */
+  margin-right: 20px;
+  text-align: center
+}
+
+.photo img {
+  max-width: 100%;
+  max-height: 160px;
+}
+
+.name{
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.position{
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+.position i{
+  display: block;
+  float: left;
+  margin: 10px 5px 0 0;
+  font-size: 1.1em;
+}
+
+.position span {
+  display: inline-block;
+  /* clear: both; */
+  line-height: 20px;
+}
+.phone{
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.phone i {
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.footer {
+  background-color: var(--footerColor);
+  min-height: 80px;
+  font-family: Open Sans;
+  font-size: 14px;
+  box-shadow: 0 2px 3px #dedede;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .address{
+  margin-left: 5px;
+  padding: 5px;
+  color: white;
+  line-height: 20px;
+}
+
+.info .address i{
+  display: block;
+  float: left;
+  margin-right: 3px;
+  position: relative;
+  top: 3px;
+}
+
+.info .address span{
+  display: inline-block;
+  margin-bottom: 1px;
+}
+
+.info .phone{
+  margin: 4px;
+  padding: 5px;
+  color: white;
+}
+
+.copyright {
+  margin: 15px;
+  padding: 5px;
+  color: white;
+  line-height: 20px;
+  align-self: center;
+}
+/* Datepicker */
+
+.datepicker-container {
+  text-align: center;
+}
+
+.ui-datepicker-trigger {
+  margin: 0 0 0 5px;
+  vertical-align: text-top;
+}
+
+.ui-datepicker {
+  font-family: open Sans;
+  margin-top: 2px;
+  padding: 0 !important;
+  box-shadow: 2px 3px 20px 0 rgba(18, 18, 18, 0.25);
+}
+
+.ui-datepicker {
+  width: 256px;
+}
+
+.openemr-calendar .ui-datepicker {
+  width: 191px;
+}
+
+.ui-datepicker table {
+  width: 256px;
+  table-layout: fixed;
+}
+
+.openemr-calendar .ui-datepicker table {
+  width: 191px;
+  table-layout: fixed;
+}
+
+.ui-datepicker-header {
+  background-color: #3e9aba !important;
+  background-image: none !important;
+  border-radius: 0;
+}
+
+.openemr-calendar .ui-datepicker-header {
+  background-color: #e6f7f9 !important;
+  border-width: 1px;
+  border-color: #c9f0f5;
+  border-style: solid;
+}
+
+.ui-datepicker-title {
+  line-height: 20px !important;
+}
+
+.ui-datepicker-prev span {
+  display: none !important;
+}
+
+.ui-datepicker-next {
+  text-align: center;
+}
+
+.ui-datepicker-next span {
+  display: none !important;
+}
+
+.ui-datepicker-prev {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAYAAACulacQAAAAUklEQVQYlXWPwQnAMAwDj9IBOlpH8CjdJLNksuujFIJjC/w6WUioFBcqJ7sGEAD5Y/hpqLRghRv4YQlUjqXI3Kql2MixraGbEhVcDXcFUR/1egEHNuTBpFW0NgAAAABJRU5ErkJggg==');
+  height: 12px;
+  width: 7px;
+  margin: 5px 5px;
+  display: inline-block; 
+  background-repeat: no-repeat;
+}
+
+
+.openemr-calendar .ui-datepicker-prev {
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAYAAAD9lDaoAAAAuUlEQVQokXXRsUtCYRAA8J8pDQ1CVIgIgtBU2NDiZIuDS4uLf6WDS1O0tLREEE8icBNKS3lTs8/B78XHw3dwcHA/juOuqjzucYJVrQQMcYctvo4OgEFIeMK6iPphCjzjEWLUC3vACx7yRo5uMUIFr5gii1EL41AvMIkBVPGH04DrSLEsIvjEOZq4wi9+iijDR0ANXOMbmxjlcIY2LtANO6YxymGCDs5wg/ciYv+KBJeY4+2A+Y9j4Y47RtUkrNXeDxUAAAAASUVORK5CYII=');
+  height: 14px;
+  width: 9px;
+  margin: 5px 5px;
+  display: inline-block; 
+}
+
+.ui-datepicker-next {
+  cursor: pointer;
+}
+
+.ui-datepicker-prev {
+  cursor: pointer;
+}
+
+.ui-datepicker-next{
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAYAAABfnvydAAAAVUlEQVQYlXWQ0Q3AIAhEL07gKI7kKN2kI3Wk1w9to3KQEELucQEECOizhhTQGHFnwOdgobWx0GkZILfYBhXl0STVbPoBarbkL7ozN/F8VBBXh8uJgF5r2hrI4GHUkAAAAABJRU5ErkJggg==');
+  height: 12px;
+  width: 8px;
+  margin: 5px 5px;
+  display: inline-block; 
+  background-repeat: no-repeat;
+}
+
+.openemr-calendar .ui-datepicker-next {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAtElEQVQYlXXQsUpCcRQH4I97EQyHa1pgIEE0hBGYL+BjNLRFjxXh4rM4F21BS4S4FAgqQioOngt/RM/6+zi/w4EanlA4MDkecYsO3vG/D8a4Rx03eMMqBQt8oodTXAdalwBm+IpNDVxG3aYEMMU3ujjDBT5SAH9R2cE58mwPFOgneJSCGp7RjLoXTEtQjbCFOV7xCxkqdp9sYxnhpFyb4QFXdh8c4Cc9Ko++OwzjFwfn5FiwBVeuI/K2UCkSAAAAAElFTkSuQmCC');
+  height: 14px;
+  width: 8px;
+  margin: 5px 5px;
+  display: inline-block; 
+}
+
+.ui-datepicker-month {
+  border-radius: 2px;
+  /* background-color: #3985a0; */
+  width: 110px !important;
+  height: 22px;
+  font-family: Open Sans !important;
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: 500;
+  text-align: left;
+  border: none !important;
+  margin-right: 17px !important;
+}
+
+.openemr-calendar .ui-datepicker-month {
+  font-family: Open Sans;
+  color: rgba(34, 34, 34, 0.87);
+  font-size: 12px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  transform: scaleX(1.0029)
+}
+
+.ui-datepicker-year {
+  border-radius: 2px;
+  /* background-color: #3985a0; */
+  width: 61px !important;
+  height: 22px;
+  border: none !important;
+  font-family: Open Sans !important;
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: 500;
+  text-align: left;
+}
+
+.openemr-calendar .ui-datepicker-year {
+  font-family: Open Sans;
+  color: rgba(34, 34, 34, 0.87);
+  font-size: 12px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  transform: scaleX(1.0029)
+}
+
+.ui-state-hover {
+  background: none !important;
+  border: 0 !important;
+}
+
+.ui-datepicker td {
+  vertical-align: top;
+}
+
+.ui-state-default {
+  border-radius: 2px;
+  border-color: #edebeb !important;
+  background: white !important;
+  width: 32px;
+  height: 24px;
+  padding: 0 !important;
+  line-height: 24px;
+  text-align: center !important;
+  font-family: Open Sans;
+  color: #707070;
+  font-size: 13px;
+  font-weight: 400 !important;
+}
+
+.ui-datepicker td {
+  width: 33px;
+}
+
+.openemr-calendar .ui-datepicker td {
+  width: 26px;
+}
+
+.openemr-calendar .ui-state-default {
+  width: 26px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.ui-state-default.ui-state-hover {
+  border-color: #dcdcdc;
+  background-color: #cff3f8 !important;
+}
+
+.ui-state-active {
+  border-color: #dcdcdc;
+  background-color: #cff3f8 !important;
+}
+
+.ui-datepicker-calendar thead tr th {
+  font-family: Open Sans;
+  color: #549fa8;
+  font-size: 12px;
+  font-weight: 400;
+  /*   width: 15px !important; */
+}
+
+.ui-datepicker-close {
+  display: none;
+}
+
+.ui-datepicker thead {
+  background-color: #f5f5f5;
+}
+
+.openemr-calendar .ui-datepicker thead {
+  background: none;
+}
+
+.ui-state-default.ui-datepicker-current {
+  float: none !important;
+  font-family: Open Sans;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  border-width: 0 !important;
+  border: none;
+  vertical-align: top;
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+.ui-datepicker-buttonpane.ui-widget-content {
+  text-align: center;
+  background-color: #3e9aba;
+  margin: 0 !important;
+  height: 28px;
+  padding: 0 !important;
+}
+
+.openemr-calendar .ui-datepicker-year {
+  background-color: transparent;
+}
+
+.openemr-calendar .ui-datepicker-month {
+  background-color: transparent;
+}
+
+.openemr-calendar .ui-state-default {
+  border: 0 !important;
+}
+
+.openemr-calendar .ui-datepicker-month {
+  margin-right: 10px !important;
+}
+
+@media (max-width: 870px){
+  .content{
+    grid-template-columns: 1fr;
+    grid-template-areas: "main " "aside ";
+  }
+
+  .main{
+    margin-left: 10px;
+  }
+
+  .aside{
+    margin: 10px;
+
+  }
+}
+
+@media (max-width: 515px){
+  .main{
+    grid-template-columns: 1fr;
+    grid-template-areas: "shiftPick " "shiftList ";
+  }
+  .user-info{
+    margin-left: 15px;
+  }
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
