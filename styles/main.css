@@ -1,5 +1,5 @@
 :root{
-  --headerColor: #a7d2cb;
+  --headerColor: #874c62;
   --mainColor: #a7d2cb;
   --asideColor: #f2d388;
   --footerColor: #874c62;
@@ -62,7 +62,6 @@ body {
 }
 
 .header-container .header-btn {
-  /* float: right; */
   line-height: 60px;
   color: #dcae1d;
   font-weight: 400;
@@ -76,7 +75,6 @@ body {
 
 .content{
   padding: 10px 0;
-  /* border: 1px solid green; */
   display: grid;
   grid-template-columns: 1fr 350px;
   grid-template-areas: "main aside ";
@@ -84,15 +82,14 @@ body {
  .main{
   box-shadow: 0 2px 3px #dedede;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "shiftPick shiftList ";
+  grid-template-columns: 1fr;
+  grid-template-areas: "shiftPick" "week";
   grid-area: main;
   margin: 0 10px 10px 0;
   background-color: var(--mainColor);
  }
 .shiftPick{
   display: grid;
-  /* border: 1px solid red; */
   justify-items: center;
   align-self: start; 
   grid-area: shiftPick;
@@ -109,6 +106,10 @@ body {
   top: 3px;
   left: -3px;
   font-size: 1.4em;
+}
+
+.week-container {
+  grid-area: week;
 }
 
 input[type="text"] {
@@ -152,8 +153,6 @@ input[type="text"] {
   float: left;
   padding: 15px;
   margin: 15px;
-  /* border: 1px solid #dedede; */
-  /* border: 1px solid blue; */
   grid-area: shiftList;
 }
 
@@ -166,7 +165,52 @@ input[type="text"] {
   font-family: "Nunito", sans-serif;
 }
 
-ul {
+.week-container {
+  background-color: #a7d2cb;
+}
+
+.day {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+}
+
+.day p {
+  min-width: 70px;
+  color: #00303f;
+}
+
+.shift-container, .hours-container {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  width: 100%;
+}
+
+.shift-container li {
+  border: 2px solid #62a1b4;
+  border-radius: 10px;
+  width: calc(100% / 24);
+  height: 30px;
+}
+
+.hours-container li{
+  font-size: 0.8rem;
+  color: #00303f;
+  width: calc(100% / 24);
+  text-align: center;
+  position: relative;
+  right: 15px;
+}
+
+.checked {
+  background-color: gold;
+}
+
+/*ul {
   width: 100%;
   height: auto;
   float: left;
@@ -212,7 +256,6 @@ ul li .button button {
   height: 50px;
   float: left;
   background: none;
-  /* position: relative; */
   border: 0px;
   box-shadow: none;
   outline: none;
@@ -250,7 +293,7 @@ ul li .button button i {
 
 ul li .button button i:hover {
   color:#e85656;
-}
+}*/
 
 .aside{
   color: #874c62;
@@ -270,7 +313,6 @@ ul li .button button i:hover {
 }
 
 .photo{
-  /* flex: 1; */
   margin-right: 20px;
   text-align: center
 }
@@ -301,7 +343,6 @@ ul li .button button i:hover {
 
 .position span {
   display: inline-block;
-  /* clear: both; */
   line-height: 20px;
 }
 .phone{
@@ -468,7 +509,6 @@ ul li .button button i:hover {
 
 .ui-datepicker-month {
   border-radius: 2px;
-  /* background-color: #3985a0; */
   width: 110px !important;
   height: 22px;
   font-family: Open Sans !important;
@@ -492,7 +532,6 @@ ul li .button button i:hover {
 
 .ui-datepicker-year {
   border-radius: 2px;
-  /* background-color: #3985a0; */
   width: 61px !important;
   height: 22px;
   border: none !important;
@@ -637,8 +676,8 @@ ul li .button button i:hover {
 
 @media (max-width: 515px){
   .main{
-    grid-template-columns: 1fr;
-    grid-template-areas: "shiftPick " "shiftList ";
+    grid-template-columns: auto;
+    grid-template-areas: "shiftPick " "week ";
   }
   .user-info{
     margin-left: 15px;

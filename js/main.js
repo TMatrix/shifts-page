@@ -1,3 +1,31 @@
+let week = document.querySelector(".week-container");
+
+week.addEventListener("click", toggleHour);
+
+setHoursTitles();
+
+function setHoursTitles() {
+    let hours = document.querySelectorAll(".hours-container");
+    [...hours[0].children].forEach((el, i) => {
+        if(i%2 !== 0){
+            el.style.opacity = 0;
+        }
+    });
+    [...hours[1].children].forEach((el, i) => {
+        if(i%2 === 0){
+            el.style.opacity = 0;
+        }
+    });
+}
+
+function toggleHour(event) {
+    let elem = event.target;
+    if (elem.nodeName === "LI") {
+        elem.classList.toggle("checked");
+    }
+    console.log([...elem.parentElement.children].indexOf(elem));
+}
+
 $(document).ready(function(){
   $('input.timepicker').timepicker({
     timeFormat: 'hh:mm p',
