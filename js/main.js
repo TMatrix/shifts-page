@@ -27,27 +27,7 @@ function toggleHour(event) {
 }
 
 $(document).ready(function(){
-  $('input.timepicker').timepicker({
-    timeFormat: 'hh:mm p',
-    interval: 60,
-    // minTime: '00',
-    // maxTime: '6:00pm',
-    // defaultTime: '00',
-    // startTime: '0:00',
-    dynamic: false,
-    dropdown: true,
-    scrollbar: true
-  });
-  $( "#datepicker" ).datepicker({
-    // altField: "#datepicker-input",
-    // altFormat: "yy-mm-dd",
-    dateFormat: "dd/mm/yy",
-    yearRange: "c-10:c+10",
-    dayNamesMin : [ "S", "M", "T", "W", "T", "F", "S" ],
-    // defaultDate: +1,
-  });
-
-
+  
   let removeSVG = '<i class="far fa-trash-alt"></i>';
 
   document.getElementById("add").addEventListener("click", function(){
@@ -94,10 +74,10 @@ $(document).ready(function(){
     let a = +(val1[0] + val1[1]);
     let b = +(val2[0] + val2[1]);
     if (a >= b){
-      $("#warning").css({
-        "display": "block",
-        "background-color": "red"        
-      });
+      // $("#warning").css({
+      //   "display": "block",
+      //   "background-color": "red"        
+      // });
       let popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
       setTimeout(function(){popup.classList.toggle("show")}, 3000);
